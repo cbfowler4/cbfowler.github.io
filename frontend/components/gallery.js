@@ -6,7 +6,7 @@ export default (root) => {
       <li><img src="assets/images/145.JPG"></li>\
       <li><img src="assets/images/282.JPG"></li>\
       <li><img src="assets/images/DSC_0181.JPG"></li>\
-      <li><img src="assets/images/yakomoto.JPG"></li>\
+      <li><img src="assets/images/yakomoto.jpg"></li>\
     </ul>\
   </div>\
   '
