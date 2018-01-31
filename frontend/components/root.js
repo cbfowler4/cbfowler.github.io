@@ -2,6 +2,7 @@ import renderAbout from './about';
 import renderProjects from './projects';
 import renderContact from './contact';
 import renderGallery from './gallery';
+import renderHome from './home';
 
 const root = document.getElementById('root');
 
@@ -22,6 +23,7 @@ const renderContent = () => {
       renderGallery(root);
       break;
     default:
+      renderHome(root);
   }
 };
 

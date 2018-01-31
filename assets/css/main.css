@@ -18,20 +18,21 @@ html {
 }
 
 body {
-  margin: 0px 20%;
-  padding: 200px 8%;
+  margin: 0px 13%;
+  padding: 100px 7% 40px 7%;
   letter-spacing: 1.1px;
   background-color: #F4F4F0;
   box-shadow: 1px 1px 37px 2px rgba(0,0,0,0.8);
   -webkit-box-shadow: 1px 1px 37px 2px rgba(0,0,0,0.8);
   -moz-box-shadow: 1px 1px 37px 2px rgba(0,0,0,0.8);
+  position: relative;
 }
 
 header {
   margin-bottom: 50px;
 }
 
-header h1 {
+header h1 a {
   font-size: 78px;
   color: black;
   letter-spacing: 4px;
@@ -50,10 +51,10 @@ header h1 {
 .nav-list {
   display: flex;
   justify-content: center;
-  -webkit-animation-delay: 3s !important;
-  -moz-animation-delay: 3s !important;
-  -o-animation-delay: 3s !important;
-  animation-delay: 3s !important;
+  -webkit-animation-delay: 2s !important;
+  -moz-animation-delay: 2s !important;
+  -o-animation-delay: 2s !important;
+  animation-delay: 2s !important;
 }
 
 .nav-list a {
@@ -70,7 +71,7 @@ header h1 {
 
 .welcome {
   display: flex;
-  margin-top: 150px;
+  margin-top: 70px;
 }
 
 .intro {
@@ -95,8 +96,8 @@ header h1 {
 
 .welcome img {
   border-radius: 50%;
-  height: 400px;
-  width: 400px;
+  height: 300px;
+  width: 300px;
   object-fit: cover;
   opacity: .95;
 }
@@ -178,6 +179,10 @@ header h1 {
   -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
 }
 
+.p1 a, .p2 a {
+  height: inherit;
+  width: inherit;
+}
 .p1 img:hover, .p2 img:hover {
   opacity: .5;
 }
@@ -233,4 +238,23 @@ header h1 {
 }
 .contact a:hover {
   color: rgba(0,0,0,.6);
+}
+
+.gallery {
+  margin-top: 100px;
+}
+
+.gallery li {
+  height: 500px;
+  width: 100%;
+  margin-bottom: 120px;
+}
+
+.gallery li img {
+  height: inherit;
+  width: inherit;
+  object-fit: cover;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
 }

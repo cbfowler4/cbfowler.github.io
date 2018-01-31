@@ -86,6 +86,10 @@ var _gallery = __webpack_require__(4);
 
 var _gallery2 = _interopRequireDefault(_gallery);
 
+var _home = __webpack_require__(5);
+
+var _home2 = _interopRequireDefault(_home);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var root = document.getElementById('root');
@@ -106,6 +110,7 @@ var renderContent = function renderContent() {
       (0, _gallery2.default)(root);
       break;
     default:
+      (0, _home2.default)(root);
   }
 };
 
@@ -175,31 +180,31 @@ exports.default = function (root) {
     <main class=\'projects\'>\
       <div class=\'p1 animated fadeIn\'>\
         <aside>\
-          <img src=\'assets\\images\\seaside.png\'>\
+          <a target="_blank" href=\'http://seaside.bryanfowler.io\'><img src=\'assets\\images\\seaside.png\'></a>\
         </aside>\
         <content>\
           <h3>Seaside</h3>\
           <p>An AirBnB inspired full stack application\
            using Ruby on Rails, React and Redux</p>\
            <ul>\
-             <li><a href=\'seaside.bryanfowler.io\'>Live</a></li>\
+             <li><a target="_blank" href=\'http://seaside.bryanfowler.io\'>Live</a></li>\
              <li>|</li> \
-             <li><a href=\'#\'>Repo</a></li>\
+             <li><a target="_blank" href=\'http://www.github.com/cbfowler4/seaside\'>Repo</a></li>\
            </ul>\
          </content>\
       </div>\
       <div class=\'p2 animated fadeIn\'>\
         <content>\
-          <h3>gitBuckets</h3>\
-          <p>An interactive data visualization using JavaScript</p>\
+          <h3>GitBuckets</h3>\
+          <p>An interactive data visualization using JavaScript and the D3 library</p>\
           <ul>\
-            <li><a href=\'bryanfowler.io\\gitBuckets\'>Live</a></li> \
+            <li><a target="_blank" href=\'http://bryanfowler.io/gitBuckets\'>Live</a></li> \
             <li>|</li> \
-            <li><a href=\'www.github.com\\cbfowler4\\gitbuckets\'>Repo</a></li>\
+            <li><a target="_blank" href=\'http://www.github.com/cbfowler4/gitbuckets\'>Repo</a></li>\
           </ul>\
         </content>\
         <aside>\
-        <img src=\'assets\\images\\gitBuckets.png\'>\
+          <a target="_blank" href=\'http://bryanfowler.io/gitBuckets\'><img src=\'assets\\images\\gitBuckets.png\'></a>\
         </aside>\
       </div>\
     </main>';
@@ -250,7 +255,44 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function (root) {
-  root.innerHTML = "this is gallery";
+  root.innerHTML = '\
+  <div class=gallery>\
+    <ul>\
+      <li><img src="assets/images/109.JPG"></li>\
+      <li><img src="assets/images/145.JPG"></li>\
+      <li><img src="assets/images/282.JPG"></li>\
+      <li><img src="assets/images/DSC_0181.JPG"></li>\
+      <li><img src="assets/images/yakomoto.JPG"></li>\
+    </ul>\
+  </div>\
+  ';
+};
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function (root) {
+  root.innerHTML = '\
+    <div class=\'welcome\'>\
+      <div class=\'intro animated fadeIn\'>\
+        <h1 id=\'intro-header\'>Hi. I make things for the web.</h1>\
+        <p id=\'intro-paragraph\'>\
+          I build interactive web applications, from server to UX. I\'ve built it it all.\
+        </p>\
+      </div>\
+      <div class=\'image animated fadeIn\'>\
+        <img  src="assets/images/avatar.jpeg" alt="" />\
+      </div>\
+    </div>\
+  ';
 };
 
 /***/ })
