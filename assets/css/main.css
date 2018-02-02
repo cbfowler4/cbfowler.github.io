@@ -21,17 +21,28 @@ html {
 body {
   margin: 0px 15%;
   min-height: 100vh;
-  padding: 100px 7% 40px 7%;
+  padding: 15px 7% 20px 7%;
   letter-spacing: 1.1px;
-  background-color: #F4F4F0;
+  background-color: #FCFCFC;
   box-shadow: 1px 1px 37px 2px rgba(0,0,0,0.8);
   -webkit-box-shadow: 1px 1px 37px 2px rgba(0,0,0,0.8);
   -moz-box-shadow: 1px 1px 37px 2px rgba(0,0,0,0.8);
   position: relative;
 }
 
+.single-page {
+  overflow: hidden;
+}
+
 header {
   margin-bottom: 50px;
+}
+
+#title {
+  -webkit-animation-delay: 0s !important;
+  -moz-animation-delay: 0s !important;
+  -o-animation-delay: 0s !important;
+  animation-delay: 0s !important;
 }
 
 header h1 a {
@@ -40,7 +51,18 @@ header h1 a {
   letter-spacing: 4px;
   font-family: 'Rock Salt', cursive;
   font-weight: 900;
+}
 
+.welcome-header {
+  margin-top: 70px;
+  transition-property: margin-top;
+  transition-duration: 1s;
+}
+
+.main-header {
+  margin-top: 0;
+  transition-property: margin-top;
+  transition-duration: .7s;
 }
 
 .fadeIn {
@@ -48,15 +70,19 @@ header h1 a {
   -moz-animation-duration: 3.5s !important;
   -o-animation-duration: 3.5s !important;
   animation-duration: 3.5s !important;
+  -webkit-animation-delay: .5s !important;
+  -moz-animation-delay: .5s !important;
+  -o-animation-delay: .5s !important;
+  animation-delay: .5s !important;
 }
 
 .nav-list {
   display: flex;
   justify-content: center;
-  -webkit-animation-delay: 2s !important;
-  -moz-animation-delay: 2s !important;
-  -o-animation-delay: 2s !important;
-  animation-delay: 2s !important;
+  -webkit-animation-delay: 2.5s !important;
+  -moz-animation-delay: 2.5s !important;
+  -o-animation-delay: 2.5s !important;
+  animation-delay: 2.5s !important;
 }
 
 .nav-list a {
@@ -74,13 +100,17 @@ header h1 a {
 .welcome {
   display: flex;
   margin-top: 70px;
+  -webkit-animation-delay: 1s !important;
+  -moz-animation-delay: 1s !important;
+  -o-animation-delay: 1s !important;
+  animation-delay: 1s !important;
 }
 
 .intro {
-  margin-top: 10%;
   padding: 40px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   font-size: 20px;
   line-height: 30px;
 }
@@ -101,7 +131,7 @@ header h1 a {
   height: 300px;
   width: 300px;
   object-fit: cover;
-  opacity: .95;
+  opacity: .93;
 }
 
 
@@ -221,7 +251,7 @@ header h1 a {
 .contact p {
   text-align: center;
   font-size: 18px;
-  margin-bottom: 100px;
+  margin-bottom: 80px;
 }
 
 .contact ul {

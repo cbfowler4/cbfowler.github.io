@@ -90,32 +90,67 @@ var _home = __webpack_require__(5);
 
 var _home2 = _interopRequireDefault(_home);
 
+var _transitions_util = __webpack_require__(6);
+
+var transitionsUtil = _interopRequireWildcard(_transitions_util);
+
+var _overflow_util = __webpack_require__(7);
+
+var overflowUtil = _interopRequireWildcard(_overflow_util);
+
+var _photos_loader = __webpack_require__(8);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var root = document.getElementById('root');
+var images = [];
+
+var getImages = function getImages() {
+  images = (0, _photos_loader.loadImages)();
+  if (location.hash.slice(2) === 'gallery') {
+    renderContent();
+  }
+};
 
 var renderContent = function renderContent() {
   var path = location.hash.slice(2);
   switch (path) {
     case "about":
+      overflowUtil.showOverflow();
       (0, _about2.default)(root);
       break;
     case "projects":
+      overflowUtil.showOverflow();
       (0, _projects2.default)(root);
       break;
     case "contact":
+      overflowUtil.hideOverflow();
       (0, _contact2.default)(root);
       break;
     case "gallery":
-      (0, _gallery2.default)(root);
+      overflowUtil.showOverflow();
+      (0, _gallery2.default)(root, images);
       break;
     default:
+      overflowUtil.hideOverflow();
       (0, _home2.default)(root);
+  }
+
+  switch (path) {
+    case '':
+      transitionsUtil.moveTitleDown();
+      break;
+    default:
+      transitionsUtil.moveTitleUp();
   }
 };
 
 window.addEventListener('hashchange', renderContent);
 window.addEventListener('load', renderContent);
+
+window.addEventListener('load', getImages);
 
 /***/ }),
 /* 1 */
@@ -254,19 +289,23 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-exports.default = function (root) {
+exports.default = function (root, images) {
   root.innerHTML = '\
   <div class=gallery>\
     <h1>I\'m getting into photography, take a look at some of my recent pictures!</h1>\
-    <ul>\
-      <li><img alt="yellowstone" src="assets/images/109.JPG"></li>\
-      <li><img alt="Derpy bison" src="assets/images/145.JPG"></li>\
-      <li><img alt="stumped on this title" src="assets/images/282.JPG"></li>\
-      <li><img alt="LIZ" src="assets/images/DSC_0181.JPG"></li>\
-      <li><img alt="yakomoto the wise" src="assets/images/yakomoto.jpg"></li>\
+    <ul id=gallery-list>\
     </ul>\
   </div>\
   ';
+
+  var galleryList = document.getElementById('gallery-list');
+  images.forEach(function (image) {
+    var listItem = document.createElement('li');
+
+    listItem.appendChild(image);
+
+    galleryList.appendChild(listItem);
+  });
 };
 
 /***/ }),
@@ -282,18 +321,94 @@ Object.defineProperty(exports, "__esModule", {
 
 exports.default = function (root) {
   root.innerHTML = '\
-    <div class=\'welcome\'>\
-      <div class=\'intro animated fadeIn\'>\
+    <div class=\'welcome animated fadeIn\'>\
+      <div class=\'intro\'>\
         <h1 id=\'intro-header\'>Hi. I make things for the web.</h1>\
         <p id=\'intro-paragraph\'>\
-          I build interactive web applications, from server to UX. I\'ve built it it all.\
+          I build full stack web applications. My goal is to continue to \
+          learn and grow as a developer. Lately I\'ve grown interested in \
+          UX design and block chain technology.\
         </p>\
       </div>\
-      <div class=\'image animated fadeIn\'>\
+      <div class=\'image\'>\
         <img  src="assets/images/avatar.jpeg" alt="" />\
       </div>\
     </div>\
   ';
+};
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var moveTitleUp = exports.moveTitleUp = function moveTitleUp() {
+  var title = document.getElementById('title');
+  if (title.classList.contains('welcome-header')) {
+    title.classList.remove('welcome-header');
+    title.classList.add('main-header');
+  }
+};
+
+var moveTitleDown = exports.moveTitleDown = function moveTitleDown() {
+  var title = document.getElementById('title');
+  title.classList.add('welcome-header');
+  title.classList.remove('main-header');
+};
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var hideOverflow = exports.hideOverflow = function hideOverflow() {
+  var body = document.getElementsByTagName('body')[0];
+  if (!body.classList.contains("single-page")) {
+    body.classList.add('single-page');
+  }
+};
+
+var showOverflow = exports.showOverflow = function showOverflow() {
+  var body = document.getElementsByTagName('body')[0];
+  if (body.classList.contains("single-page")) {
+    body.classList.remove('single-page');
+  }
+};
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var loadImages = exports.loadImages = function loadImages() {
+  // const height = 600;
+  // const width = 600;
+  var imageUrls = ["assets/images/109.JPG", "assets/images/145.JPG", "assets/images/282.JPG", "assets/images/DSC_0181.JPG", "assets/images/yakomoto.jpg"];
+
+  var images = [];
+
+  imageUrls.forEach(function (imageUrl) {
+    var image = new Image();
+    image.src = imageUrl;
+    images.push(image);
+  });
+
+  return images;
 };
 
 /***/ })
