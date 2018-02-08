@@ -185,14 +185,19 @@ exports.default = function (root) {
           <li><i class="devicon-react-original-wordmark colored"></i></li>\
         </div>\
         <div id=skills1>\
-          <li><i class="devicon-postgresql-plain-wordmark colored"></i></li>\
+          <li><i class="devicon-nodejs-plain colored"></i></li>\
           <li><i class="devicon-javascript-plain colored"></i></li>\
-          <li><i class="devicon-git-plain-wordmark colored"></i></li>\
+          <li><i class="devicon-mongodb-plain-wordmark colored"></i></li>\
+        </div>\
+        <div id=skills1>\
+          <li><i class="devicon-express-original colored"></i></li>\
+          <li><i class="devicon-postgresql-plain-wordmark colored"></i></li>\
+          <li><i class="devicon-python-plain-wordmark colored"></i></li>\
         </div>\
         <div id=skills1>\
           <li><i class="devicon-css3-plain-wordmark colored"></i></li>\
+          <li><i class="devicon-git-plain-wordmark colored"></i></li>\
           <li><i class="devicon-d3js-plain colored"></i></li>\
-          <li><i class="devicon-python-plain-wordmark colored"></i></li>\
         </div>\
       </ul>\
     </div>\
@@ -301,9 +306,7 @@ exports.default = function (root, images) {
   var galleryList = document.getElementById('gallery-list');
   images.forEach(function (image) {
     var listItem = document.createElement('li');
-
     listItem.appendChild(image);
-
     galleryList.appendChild(listItem);
   });
 };
@@ -396,8 +399,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var loadImages = exports.loadImages = function loadImages() {
-  // const height = 600;
-  // const width = 600;
+
   var imageUrls = ["assets/images/109.JPG", "assets/images/145.JPG", "assets/images/282.JPG", "assets/images/DSC_0181.JPG", "assets/images/yakomoto.jpg"];
 
   var images = [];

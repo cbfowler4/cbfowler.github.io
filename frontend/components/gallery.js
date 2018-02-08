@@ -11,9 +11,7 @@ export default (root, images) => {
   const galleryList = document.getElementById('gallery-list');
   images.forEach((image) => {
     const listItem = document.createElement('li');
-    
     listItem.appendChild(image);
-
     galleryList.appendChild(listItem);
   });
 };

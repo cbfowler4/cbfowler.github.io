@@ -1,6 +1,5 @@
 export const loadImages = () => {
-  // const height = 600;
-  // const width = 600;
+
   const imageUrls = [
     "assets/images/109.JPG",
     "assets/images/145.JPG",
